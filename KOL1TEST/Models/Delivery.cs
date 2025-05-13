@@ -1,4 +1,5 @@
-namespace Kolokwium1.Models;
+
+namespace KOL1TEST.Models;
 
 public class Delivery
 {

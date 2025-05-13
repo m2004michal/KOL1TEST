@@ -1,9 +1,12 @@
-using Kolokwium1.DTOs;
+using KOL1TEST.DTOs;
+using KOL1TEST.Models;
 
-namespace Kolokwium1.Repositories;
+namespace KOL1TEST.Repositories;
 
 public interface IDeliveriesRepository
 {
     Task<DeliveryClientDriverDTO> GetDelivery(int id);
-
+    Task<List<ProductDTO>> GetProductsForDeliveryId(int id);
+    Task<DriverDTO> FindDriverByLicence(string dtoLicenceNumber);
+    Task<int> CreateNewDelivery(Delivery delivery);
 }

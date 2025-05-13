@@ -1,8 +1,10 @@
-using Kolokwium1.DTOs;
-using Kolokwium1.Repositories;
-using WebApplication1.Exceptions;
+using KOL1TEST.DTOs;
+using KOL1TEST.Exceptions;
+using KOL1TEST.Models;
+using KOL1TEST.Repositories;
 
-namespace Kolokwium1.Services;
+
+namespace KOL1TEST.Services;
 
 public class DeliveriesService : IDeliveriesService
 {
@@ -22,5 +24,19 @@ public class DeliveriesService : IDeliveriesService
         //     throw new NotFoundException("client with id: "+id+" doesnt exist");
         
         return await _deliveriesRepository.GetDelivery(id);
+    }
+    
+
+    public async Task<int> CreateNewDelivery(CreateDeliveryDto dto)
+    {
+        var delivery = new Delivery()
+        {
+            DeliveryId = dto.DeliveryId,
+            CustomerId = dto.CustomerId,
+            DriverId = _deliveriesRepository.FindDriverByLicence(dto.LicenceNumber).Id,
+            Date = DateTime.Now,
+        };
+        return await _deliveriesRepository.CreateNewDelivery(delivery);
+
     }
 }

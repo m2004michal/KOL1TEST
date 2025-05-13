@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using WebApplication1.Exceptions;
+using KOL1TEST.Exceptions;
 
-namespace WebApplication1.Middlewares;
+namespace KOL1TEST.Middlewares;
 
 public class GlobalExceptionHandlingMiddleware
 {

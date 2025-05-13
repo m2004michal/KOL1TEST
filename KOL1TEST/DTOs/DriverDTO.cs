@@ -1,4 +1,5 @@
-namespace Kolokwium1.DTOs;
+
+namespace KOL1TEST.DTOs;
 
 public class DriverDTO
 {

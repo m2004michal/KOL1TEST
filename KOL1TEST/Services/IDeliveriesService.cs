@@ -1,9 +1,10 @@
-using Kolokwium1.DTOs;
+using KOL1TEST.DTOs;
 
-namespace Kolokwium1.Services;
+namespace KOL1TEST.Services;
 
 public interface IDeliveriesService
 {
     Task<DeliveryClientDriverDTO> GetDelivery(int id);
 
+    Task<int> CreateNewDelivery(CreateDeliveryDto dto);
 }
